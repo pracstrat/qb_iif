@@ -1,5 +1,6 @@
 ## 0.1.1
-  * Removed the dependence upon the CSV library in order to fix a bug about duplicate double quote characters.
+Removed the dependence upon the CSV library in order to fix a bug about duplicate double quote characters.
+
 ## 0.1.0
   * Implement OTHERNAME
   * Implement TIMEACT
