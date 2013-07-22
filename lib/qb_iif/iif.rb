@@ -42,6 +42,7 @@ module QbIif
         values[:headers].uniq.each{|header| lines << header.join(COL_SEP) }
         values[:rows].each{|row| lines << row.join(COL_SEP) }
       end
+      lines << ''
       lines.join("\n")
     end
 

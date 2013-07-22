@@ -1,3 +1,6 @@
+## 0.1.2
+Add the extra new line into the end of exported data.
+
 ## 0.1.1
 Removed the dependence upon the CSV library in order to fix a bug about duplicate double quote characters.
 
