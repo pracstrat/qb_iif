@@ -12,7 +12,7 @@ describe QbIif::DSL::Trns do
           trnstype 'INVOICE'
           date '8/31/1988'
           accnt 'Accounts Receivable'
-          name 'Customer'
+          name 'Customer "HSBC"'
           _class 'tires:deeptread'
           amount 20
           docnum 1

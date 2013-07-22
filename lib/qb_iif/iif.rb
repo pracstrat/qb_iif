@@ -1,5 +1,3 @@
-require 'csv'
-
 require 'qb_iif/keywords'
 require 'qb_iif/dsl/base'
 
@@ -26,7 +24,7 @@ require 'qb_iif/dsl/vtype'
 module QbIif
   class IIF
     include QbIif::Keywords
-
+    COL_SEP = "\t"
     def initialize(&block)
       @output = {}
       if block_given?
@@ -39,17 +37,12 @@ module QbIif
     end
 
     def output
-      CSV.generate(col_sep: "\t") do |tsv|
-
-        @output.each do |_, list|
-          list[:headers].uniq.each do |header|
-            tsv << header
-          end
-          list[:rows].each do |row|
-            tsv << row
-          end
-        end
+      lines = []
+      @output.values.each do |values|
+        values[:headers].uniq.each{|header| lines << header.join(COL_SEP) }
+        values[:rows].each{|row| lines << row.join(COL_SEP) }
       end
+      lines.join("\n")
     end
 
     def method_missing(method_name, *args, &block)
