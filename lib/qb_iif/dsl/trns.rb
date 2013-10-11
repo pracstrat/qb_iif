@@ -30,7 +30,8 @@ module QbIif::DSL
       :rep,
       :ponum,
       :invtitle,
-      :invmemo
+      :invmemo,
+      :desc
     ]
     START_COLUMN = 'TRNS'
     END_COLUMN = 'ENDTRNS'
